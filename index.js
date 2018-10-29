@@ -53,6 +53,18 @@ function getConnection (str, opts) {
   if(opts.readyTimeout) {
     copts.readyTimeout = opts.readyTimeout;
   }
+  
+  if (opts.username) {
+    copts.username = opts.username;
+  }
+
+  if (opts.tryKeyboard) {
+    copts.tryKeyboard = opts.tryKeyboard;
+  }
+
+  if (opts.onKeyboard) {
+    copts.onKeyboard = opts.onKeyboard;
+  }
 
   var conn = new Connection(copts)
 
