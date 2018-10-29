@@ -56,6 +56,9 @@ Connection.prototype.connect = function (opts) {
 
   this.connection.on('error', this.emit.bind(this, 'error'))
   this.connection.on('ready', this._onReady.bind(this))
+  if (opts.onKeyboard) {
+      this.connection.on('keyboard-interactive', opts.onKeyboard);
+  }
 
   this.connection.connect(opts)
 }
